@@ -23,6 +23,44 @@ export default function () {
     }
 
     return (
-        <div>Complete your app here</div>
+        <div>
+            <h1>Employees</h1>
+            <ul>
+                {employees.map(employee => (
+                    <li key={employee.name}>{employee.name} - {employee.value}</li>
+                    ))}
+            </ul>
+            <form onSubmit={e => {
+                e.preventDefault();
+                createEmployee(e.target.name.value, e.target.value.value);
+                e.target.reset();
+            }}>
+                <label>
+                    Name:
+                    <input type="text" name="name" />
+                </label>
+                <label>
+                    Value:
+                    <input type="text" name="value" />
+                </label>
+                <button type="submit">Createt</button>
+           </form>
+           <form onSubmit={e => {
+               e.preventDefault();
+               updateEmployee(e.target.name.value,e.target.value.value);
+               e.target.reset();
+            }}>
+                <label>
+                    Name:
+                    <input type="text" name="name" />
+                </label>
+                <label>
+                    Value:
+                    <input type="text" name="value" />
+                </label>
+                <button type="submit">Update</button>
+          </form>                 
+            
+        </div>
     );
 }
