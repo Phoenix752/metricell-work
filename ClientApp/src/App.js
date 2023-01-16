@@ -24,13 +24,13 @@ export default function () {
 
     return (
         <div>
-            <h1>Employees</h1>
+            <h1>Employees</h1> // employee header
             <ul>
-                {employees.map(employee => (
+                {employees.map(employee => (   // list for employees
                     <li key={employee.name}>{employee.name} - {employee.value}</li>
                     ))}
             </ul>
-            <form onSubmit={e => {
+            <form onSubmit={e => { // form creation
                 e.preventDefault();
                 createEmployee(e.target.name.value, e.target.value.value);
                 e.target.reset();
@@ -47,7 +47,7 @@ export default function () {
            </form>
            <form onSubmit={e => {
                e.preventDefault();
-               updateEmployee(e.target.name.value,e.target.value.value);
+               updateEmployee(e.target.name.value,e.target.value.value); // allows for the emplyee form to be updated
                e.target.reset();
             }}>
                 <label>
