@@ -45,7 +45,7 @@ export default function () {
                 </label>
                 <button type="submit">Createt</button>
            </form>
-           <form onSubmit={e => {
+           <form onSubmit={e => {   // form creation for an employee to be created
                e.preventDefault();
                updateEmployee(e.target.name.value,e.target.value.value); // allows for the emplyee form to be updated
                e.target.reset();
